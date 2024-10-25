@@ -26,7 +26,7 @@ def openapi_endpoint(name):
         str: The rendered HTML for the OpenAPI documentation.
     """
     log.debug('function openapi_endpoint: %s', name)
-    endpoints = oa_config.schemingdcat_get_openapi_endpoints()
+    endpoints = oa_config.openapi_get_endpoints()
     log.debug('openapi_endpoint: %s', endpoints)
     endpoint = next((ep for ep in endpoints if ep['name'] == name), None)
     if not endpoint:

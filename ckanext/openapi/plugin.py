@@ -1,6 +1,4 @@
-import ckan.plugins as plugins
-import ckan.plugins.toolkit as toolkit
-
+import ckan.plugins as p
 
 import ckanext.openapi.helpers as helpers
 import ckanext.openapi.views as views
@@ -16,17 +14,17 @@ except AttributeError:
         return cls
 
 @config_declarations
-class OpenapiPlugin(plugins.SingletonPlugin):
-    plugins.implements(plugins.IConfigurer)
-    plugins.implements(plugins.IBlueprint)
-    plugins.implements(plugins.ITemplateHelpers)
+class OpenapiPlugin(p.SingletonPlugin):
+    p.implements(p.IConfigurer)
+    p.implements(p.IBlueprint)
+    p.implements(p.ITemplateHelpers)
     
 
     # IConfigurer
     def update_config(self, config_):
-        toolkit.add_template_directory(config_, "templates")
-        toolkit.add_public_directory(config_, "public")
-        toolkit.add_resource("assets", "openapi")
+        p.toolkit.add_template_directory(config_, "templates")
+        p.toolkit.add_public_directory(config_, "public")
+        p.toolkit.add_resource("assets", "openapi")
         
         # Cache OpenAPI endpoints
         oa_config.validated_openapi_endpoints = openapi_validate_endpoints()

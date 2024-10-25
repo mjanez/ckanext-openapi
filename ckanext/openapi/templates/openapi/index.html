@@ -30,7 +30,7 @@
 {% endblock %}
 
 {% block primary_content %}
-{% set templates = h.schemingdcat_get_openapi_endpoints() %}
+{% set templates = h.openapi_get_endpoints() %}
 {% set truncate = truncate or 180 %}
 
 <div class="box">
