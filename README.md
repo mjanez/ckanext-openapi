@@ -2,8 +2,9 @@
 
 # ckanext-openapi
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+The `ckanext-openapi` is an extension for CKAN that allows OpenAPI endpoints to be integrated and displayed directly from the CKAN catalogue.
 
+- [OpenAPI Specification](https://swagger.io/specification/)
 
 ## Requirements
 ### Compatibility
@@ -20,11 +21,7 @@ This plugin needs the following plugins to work properly:
 
 ## Installation
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
-
-To install ckanext-openapi:
+To install `ckanext-openapi`:
 
 1. Activate your CKAN virtual environment, for example:
 
@@ -41,25 +38,29 @@ To install ckanext-openapi:
    config file (by default the config file is located at
    `/etc/ckan/default/ckan.ini`).
 
+    ```ini
+    # Add the plugin to the list of plugins
+    ckan.plugins = ... dcat ... openapi
+    ```
+
 4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
 
      sudo service apache2 reload
 
 
 ## Config settings
+Set the endpoints you want to use with configuration options:
 
-None at present
+  ```ini
+  # Each of the plugins is optional depending on your use
+  ckan.plugins = '[{"url":"/static/openapi/sample.json","name":"sample","title":{"en":"OpenAPI sample 1","es":"Ejemplo de OpenAPI 1"},"description":{"en":"API with examples.","es":"API con ejemplos."}},{"url":"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/examples/v3.0/petstore.json","name":"petstore","title":{"en":"Petstore OpenAPI example","es":"Ejemplo OpenAPI Petstore"},"description":{"en":"This is a sample Pet Store Server based on the OpenAPI 3.0 specification.","es":"Este es un ejemplo de Servidor de Tienda de Mascotas basado en la especificación OpenAPI 3.0."}}]'
+  ```
 
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.openapi.some_setting = some_default_value
 
 
 ## Developer installation
 
-To install ckanext-openapi for development, activate your CKAN virtualenv and
+To install `ckanext-openapi` for development, activate your CKAN virtualenv and
 do:
 
     git clone https://github.com/mjanez/ckanext-openapi.git
@@ -77,7 +78,7 @@ To run the tests, do:
 
 ## Releasing a new version of ckanext-openapi
 
-If ckanext-openapi should be available on PyPI you can follow these steps to publish a new version:
+If `ckanext-openapi` should be available on PyPI you can follow these steps to publish a new version:
 
 1. Update the version number in the `setup.py` file. See [PEP 440](http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers) for how to choose version numbers.
 

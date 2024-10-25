@@ -39,7 +39,7 @@ def openapi_endpoint(name):
 
 # Rules
 openapi.add_url_rule("/openapi", view_func=openapi_index, endpoint="openapi_index", strict_slashes=False)
-openapi.add_url_rule("/openapi/<name>", view_func=openapi_endpoint, endpoint="openapi_endpoint", strict_slashes=False)
+openapi.add_url_rule("/openapi/<name>/", view_func=openapi_endpoint, endpoint="openapi_endpoint", strict_slashes=True)
 
 def get_blueprints():
     return [openapi]
