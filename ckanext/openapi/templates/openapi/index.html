@@ -47,7 +47,7 @@
                             <a href="{{ h.url_for('openapi.openapi_endpoint', name=template.name) }}" target="_blank" rel="noopener noreferrer">
                                 <i class="fa fa-code"></i>{{ h.scheming_language_text(template.title) }}
                                 <div class="metadata-sidebar-template-description">{{ h.markdown_extract(h.scheming_language_text(template.description), extract_length=truncate) }}</div>
-                                <small>{{ h.url_for_static_or_external(template.url) }}</small>
+                                <small>{{ h.url_for_static_or_external(template.url)|truncate(120) }}</small>
                             </a>
                         </li>
                     {% endfor %}
