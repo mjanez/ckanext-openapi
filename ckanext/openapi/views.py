@@ -13,7 +13,7 @@ openapi = Blueprint(
     "openapi", __name__)
 
 def openapi_index():
-    return render('openapi/openapi/index.html')
+    return render('openapi/index.html')
 
 def openapi_endpoint(name):
     """
@@ -33,7 +33,7 @@ def openapi_endpoint(name):
         log.debug('OpenAPI endpoint {name} not found'.format(name=name))
         return base.abort(404, (u'OpenAPI endpoint {name} not found').format(name=name))
     
-    return render('openapi/openapi/openapi_endpoint.html', extra_vars={
+    return render('openapi/openapi_endpoint.html', extra_vars={
         'endpoint': endpoint
     })
 
