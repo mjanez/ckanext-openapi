@@ -1,19 +1,16 @@
 openapi: 3.0.0
 servers:
-- url: https://des.gis.miteco.gob.es/catalogo/api
-  description: Development Portal [RESTRICTED ACCESS]
-- url: https://pre.gis.miteco.gob.es/catalogo/api
-  description: Staging portal [RESTRICTED ACCESS]
+- url: https://demo.ckan.org/api
+  description: Development Portal [PUBLIC]
 info:
-  title: MITECO Open Data Portal - Datastore API
+  title: Open Data Portal - Datastore API
   description: >
-    This API provides live access to the Datastore portion of the Ministry for the Ecological Transition and the Demographic Challenge (MiTEco) Open Data Portal.
-    Our staging portals are for sharing upcoming features and testing restricted network integration, and development sites are for features under development.
+    This API provides live access to the Datastore portion of the Demo Open Data Portal. Our staging portals are for sharing upcoming features and testing restricted network integration, and development sites are for features under development.
   termsOfService: https://creativecommons.org/licenses/by/4.0/
   contact:
-    name: Ministry for the Ecological Transition and the Demographic Challenge (MiTEco)
-    url: https://www.miteco.gob.es/en.html
-    email: informacionma@miteco.es
+    name: CKAN
+    url: https://ckan.org/
+    email: info@ckan.org
   license:
     name: CC BY 4.0
     url: https://creativecommons.org/licenses/by/4.0/
