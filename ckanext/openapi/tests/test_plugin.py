@@ -1,56 +1,46 @@
-"""
-Tests for plugin.py.
-
-Tests are written using the pytest library (https://docs.pytest.org), and you
-should read the testing guidelines in the CKAN docs:
-https://docs.ckan.org/en/2.9/contributing/testing.html
-
-To write tests for your extension you should install the pytest-ckan package:
-
-    pip install pytest-ckan
-
-This will allow you to use CKAN specific fixtures on your tests.
-
-For instance, if your test involves database access you can use `clean_db` to
-reset the database:
-
-    import pytest
-
-    from ckan.tests import factories
-
-    @pytest.mark.usefixtures("clean_db")
-    def test_some_action():
-
-        dataset = factories.Dataset()
-
-        # ...
-
-For functional tests that involve requests to the application, you can use the
-`app` fixture:
-
-    from ckan.plugins import toolkit
-
-    def test_some_endpoint(app):
-
-        url = toolkit.url_for('myblueprint.some_endpoint')
-
-        response = app.get(url)
-
-        assert response.status_code == 200
-
-
-To temporary patch the CKAN configuration for the duration of a test you can use:
-
-    import pytest
-
-    @pytest.mark.ckan_config("ckanext.myext.some_key", "some_value")
-    def test_some_action():
-        pass
-"""
+import pytest
+import ckan.plugins as p
 import ckanext.openapi.plugin as plugin
-
+import ckanext.openapi.config as oa_config
+from ckan.tests.helpers import reset_db
 
 @pytest.mark.ckan_config("ckan.plugins", "openapi")
 @pytest.mark.usefixtures("with_plugins")
-def test_plugin():
-    assert plugin_loaded("openapi")
+def test_plugin_loaded():
+    assert p.plugin_loaded("openapi")
+
+@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.usefixtures("with_plugins")
+def test_update_config(monkeypatch):
+    # Mock the openapi_validate_endpoints function
+    def mock_openapi_validate_endpoints():
+        return [{"url": "/static/openapi/sample.json", "name": "sample"}]
+    
+    monkeypatch.setattr(plugin, "openapi_validate_endpoints", mock_openapi_validate_endpoints)
+    
+    # Create an instance of the plugin and call update_config
+    openapi_plugin = plugin.OpenapiPlugin()
+    config_ = {}
+    openapi_plugin.update_config(config_)
+    
+    # Check if the validated_openapi_endpoints is set correctly
+    assert oa_config.validated_openapi_endpoints == [{"url": "/static/openapi/sample.json", "name": "sample"}]
+
+@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.usefixtures("with_plugins")
+def test_get_blueprint():
+    openapi_plugin = plugin.OpenapiPlugin()
+    blueprints = openapi_plugin.get_blueprint()
+    
+    # Check if the blueprint is returned correctly
+    assert len(blueprints) > 0
+    assert blueprints[0].name == "openapi"
+
+@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.usefixtures("with_plugins")
+def test_get_helpers():
+    openapi_plugin = plugin.OpenapiPlugin()
+    helpers = openapi_plugin.get_helpers()
+    
+    # Check if the helpers are returned correctly
+    assert "openapi_get_endpoints" in helpers
