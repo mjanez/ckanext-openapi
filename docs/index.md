@@ -1,10 +1,9 @@
 # ckanext-openapi. CKAN instance OpenAPI endpoints.
 
+[![Tests](https://github.com/mjanez/ckanext-openapi/workflows/Tests/badge.svg?branch=main)](https://github.com/mjanez/ckanext-openapi/actions)
+[![Code Coverage](http://codecov.io/github/ckan/ckanext-openapi/coverage.svg?branch=main)](http://codecov.io/github/ckan/ckanext-openapi?branch=main)
 
-[![Tests](https://github.com/mjanez/ckanext-openapi/actions/workflows/test.yml/badge.svg)](https://github.com/mjanez/ckanext-openapi/actions)
-
-
-The `ckanext-openapi` is an extension for CKAN that allows OpenAPI endpoints to be integrated and displayed directly from the CKAN catalogue.
+`ckanext-openapi` is an extension for CKAN that integrates and displays OpenAPI endpoints directly in the CKAN catalog, [^1] supporting both **OpenAPI 2.0.0** and **OpenAPI 3.0.0** specifications.
 
 !!! tip
     

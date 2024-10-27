@@ -1,10 +1,9 @@
 # ckanext-openapi
 
-
 [![Tests](https://github.com/mjanez/ckanext-openapi/workflows/Tests/badge.svg?branch=main)](https://github.com/mjanez/ckanext-openapi/actions)
 [![Code Coverage](http://codecov.io/github/ckan/ckanext-openapi/coverage.svg?branch=main)](http://codecov.io/github/ckan/ckanext-openapi?branch=main)
 
-`ckanext-openapi` is an extension for CKAN that integrates and displays OpenAPI endpoints directly from the CKAN catalog, supporting both **OpenAPI 2.0.0** and **OpenAPI 3.0.0** specifications.
+`ckanext-openapi` is an extension for CKAN that integrates and displays OpenAPI endpoints directly in the CKAN catalog, [^1] supporting both **OpenAPI 2.0.0** and **OpenAPI 3.0.0** specifications.
 
 - [OpenAPI Specification](https://swagger.io/specification/)
 
@@ -67,3 +66,5 @@ This material is copyright (c) Open Knowledge.
 It is open and licensed under the GNU Affero General Public License (AGPL) v3.0 whose full text may be found at:
 
 http://www.fsf.org/licensing/licenses/agpl-3.0.html
+
+[^1] Inspired by `ckanext-openapiview` template. Info and greetings to: https://github.com/open-data/ckanext-openapiview
