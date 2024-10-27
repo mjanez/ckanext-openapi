@@ -1,0 +1,15 @@
+openapi-css:
+  output: ckanext-openapi/%(version)s_openapi.css
+  contents:
+    - vendor/swagger/swagger-ui-5.17.14.css
+    - css/swagger/lang.css
+
+openapi:
+  output: ckanext-openapi/%(version)s_openapi.js
+  extra:
+    preload:
+      - base/main
+      - ckanext-openapi/openapi-css
+  contents:
+    - js/modules/openapi.js
+    - vendor/swagger/swagger-ui-5.17.14-bundle.js

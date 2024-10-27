@@ -1,0 +1,476 @@
+/* FIXME: implementar i18n correctamente en swagger-ui upstream */
+
+html[lang=es] .swagger-ui span.servers-title {
+    visibility: hidden;
+}
+html[lang=es] .swagger-ui .servers-title:before {
+    visibility: visible; content: "servidores";
+}
+
+/*Enlace de Términos de Servicio*/
+html[lang=es] .swagger-ui .info__tos a {
+    visibility: hidden;
+}
+html[lang=es] .swagger-ui .info__tos a::before {
+    visibility: visible;
+    content: "Mandato";
+}
+
+/*Botón Autorizar*/
+html[lang=es] .swagger-ui .scheme-container .btn.authorize.unlocked span {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .scheme-container .btn.authorize.unlocked span::before {
+    visibility: visible;
+    content: "Autorizar";
+    font-size: 14px;
+}
+
+/*Encabezado de Autorizaciones Disponibles*/
+html[lang=es] .swagger-ui .modal-ux-header h3 {
+    visibility: hidden;
+}
+html[lang=es] .swagger-ui .modal-ux-header h3::before {
+    visibility: visible;
+    content: "Autorizaciones disponibles";
+}
+
+/*Etiqueta Nombre: Autorización*/
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(2) p {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(2) p::before {
+    visibility: visible;
+    content: "Nombre: ";
+    font-size: 12px;
+}
+
+/*Etiqueta En: Encabezado*/
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(3) p {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(3) p::before {
+    visibility: visible;
+    content: "En: ";
+    font-size: 12px;
+}
+
+/*Etiqueta Valor:*/
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(4) label {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .auth-container .wrapper:nth-of-type(4) label::before {
+    visibility: visible;
+    content: "Valor:";
+    font-size: 12px;
+}
+
+/*Botón Autorizar (Enviar)*/
+html[lang=es] .swagger-ui .auth-btn-wrapper button.btn.modal-btn.auth.authorize.button {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .auth-btn-wrapper button.btn.modal-btn.auth.authorize.button::before {
+    content: "Autorizar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Autorizar (Cerrar)*/
+html[lang=es] .swagger-ui .auth-btn-wrapper button.btn.modal-btn.auth.btn-done.button {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .auth-btn-wrapper button.btn.modal-btn.auth.btn-done.button::before {
+    content: "Cerrar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Etiqueta Servidores*/
+html[lang=es] .swagger-ui .scheme-container span {
+    visibility: hidden;
+}
+html[lang=es] .swagger-ui .scheme-container span::before {
+    visibility: visible;
+    content: "Servidores";
+}
+
+/*Etiqueta Nombre de Parámetros*/
+html[lang=es] .swagger-ui .parameters-container .col_header.parameters-col_name {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .parameters-container .col_header.parameters-col_name::after {
+    visibility: visible;
+    content: "Nombre";
+    font-size: 12px;
+}
+
+/*Etiqueta Parámetros*/
+html[lang=es] .swagger-ui .tab-item.active span {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .tab-item.active span::before {
+    visibility: visible;
+    content: "Parámetros";
+    font-size: 14px;
+}
+
+/*Etiqueta Respuestas*/
+html[lang=es] .swagger-ui .responses-wrapper .opblock-section-header h4 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .opblock-section-header h4::before {
+    visibility: visible;
+    content: "Respuestas";
+    font-size: 14px;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > h4 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > h4::after {
+    visibility: visible;
+    content: "Respuestas";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - Código de estado no documentado*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_status .response-undocumented i {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_status .response-undocumented i::after {
+    visibility: visible;
+    content: "Desconocido";
+    font-size: 11px;
+}
+
+/*Respuesta en Vivo - Encabezado de columna de detalles*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .col_header.response-col_description {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .col_header.response-col_description::after {
+    visibility: visible !important;
+    content: "Detalles";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - URL de solicitud*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > div:not(.curl-command) h4 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > div:not(.curl-command) h4::after {
+    visibility: visible;
+    content: "Solicitar URL";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - URL de solicitud*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > h4:nth-of-type(1) {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > h4:nth-of-type(1):after {
+    visibility: visible;
+    content: "Respuesta del servidor";
+    font-size: 12px;
+}
+
+/*Respuesta - Etiquetas de campo de tipo de medio*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__title {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__title::after {
+    visibility: visible;
+    content: "Tipo de medio";
+    font-size: 11.2px;
+    margin-bottom: 2.24px;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__accept-message {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__accept-message::after {
+    visibility: visible;
+    content: "Control de encabezado de aceptación.";
+    font-size: 11.2px;
+}
+
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > h4 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > h4::after {
+    visibility: visible;
+    content: "Respuestas";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - URL de solicitud*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > div:not(.curl-command) h4 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner > div > div > div:not(.curl-command) h4::after {
+    visibility: visible;
+    content: "Solicitar URL";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - cuerpo de la respuesta*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_description > div:first-of-type h5 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_description > div:first-of-type h5::after {
+    visibility: visible;
+    content: "Texto de las respuestas";
+    font-size: 12px;
+}
+
+/*Respuesta en Vivo - encabezados de la respuesta*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_description > div:last-of-type h5 {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .responses-table.live-responses-table .response-col_description > div:last-of-type h5::after {
+    visibility: visible;
+    content: "Encabezados de las respuestas";
+    font-size: 12px;
+}
+
+/*Respuesta - Etiquetas de campo de tipo de medio*/
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__title {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__title::after {
+    visibility: visible;
+    content: "Tipo de medio";
+    font-size: 11.2px;
+    margin-bottom: 2.24px;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__accept-message {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-wrapper .responses-inner .response-control-media-type .response-control-media-type__accept-message::after {
+    visibility: visible;
+    content: "Control de encabezado de aceptación.";
+    font-size: 11.2px;
+}
+
+/*Etiqueta Enlaces*/
+html[lang=es] .swagger-ui .responses-header td.col.col_header.response-col_links {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .responses-header td.col.col_header.response-col_links::before {
+    visibility: visible;
+    content: "Enlaces";
+    font-size: 14px;
+    padding-left: 2em;
+}
+
+/*Etiqueta Sin enlaces*/
+html[lang=es] .swagger-ui .response .response-col_links i {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .response .response-col_links i::before {
+    visibility: visible;
+    content: "Sin enlaces";
+    font-size: 14px;
+}
+
+/*Etiqueta Sin parámetros*/
+html[lang=es] .swagger-ui .parameters-container .opblock-description-wrapper p {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .parameters-container .opblock-description-wrapper p::before {
+    visibility: visible;
+    content: "Sin parámetros";
+    font-size: 14px;
+}
+
+/*Botón Probar*/
+html[lang=es] .swagger-ui .try-out button.btn.try-out__btn {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .try-out button.btn.try-out__btn::before {
+    content: "Probar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Probar (Cancelar)*/
+html[lang=es] .swagger-ui .try-out button.btn.try-out__btn.cancel {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .try-out button.btn.try-out__btn.cancel::before {
+    content: "Cancelar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Ejecutar*/
+html[lang=es] .swagger-ui .execute-wrapper button.btn.execute.opblock-control__btn {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .execute-wrapper button.btn.execute.opblock-control__btn::before {
+    content: "Ejecutar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Ejecutar (enviar)*/
+html[lang=es] .swagger-ui .btn-group button.btn.execute.opblock-control__btn {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .btn-group button.btn.execute.opblock-control__btn::before {
+    content: "Ejecutar";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Ejecutar (Borrar)*/
+html[lang=es] .swagger-ui .btn-group button.btn.btn-clear.opblock-control__btn {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .btn-group button.btn.btn-clear.opblock-control__btn::before {
+    content: "Borrar datos";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Etiqueta Cuerpo de la solicitud*/
+html[lang=es] .swagger-ui .opblock-section.opblock-section-request-body h4 {
+    visibility: hidden;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .opblock-section.opblock-section-request-body h4::before {
+    visibility: visible;
+    content: "Cuerpo de la solicitud";
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Etiqueta Requerido*/
+html[lang=es] .swagger-ui .opblock-section.opblock-section-request-body h4::after {
+    visibility: visible;
+    content: "Requerido";
+}
+
+/*Etiqueta de campo de selección de ejemplos*/
+html[lang=es] .swagger-ui .examples-select span.examples-select__section-label {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .examples-select span.examples-select__section-label::after {
+    visibility: visible;
+    content: "Ejemplos:";
+    font-size: 0.9rem;
+}
+
+/*Botón de valor de ejemplo*/
+html[lang=es] .swagger-ui .model-example li.tabitem.active button {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .model-example li.tabitem.active button::before {
+    content: "Valor de ejemplo";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Botón Esquema*/
+html[lang=es] .swagger-ui .model-example li.tabitem button {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .model-example li.tabitem button::before {
+    content: "Esquema";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}
+
+/*Valor por defecto*/
+html[lang=es] .swagger-ui .parameters-col_description .parameter__default.renderedMarkdown p i {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .parameters-col_description .parameter__default.renderedMarkdown p i::before {
+    visibility: visible;
+    content: "Valor por defecto";
+    font-size: 14px;
+}
+
+/*Valores disponibles*/
+html[lang=es] .swagger-ui .parameter__enum.renderedMarkdown p i {
+    visibility: hidden;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .parameter__enum.renderedMarkdown p i::before {
+    visibility: visible;
+    content: "Valores disponibles";
+    font-size: 14px;
+}
+
+/*Botón Borrar*/
+html[lang=es] .swagger-ui .btn-group button.btn.btn-clear.opblock-control__btn {
+    text-indent: -100vw !important;
+    line-height: 0;
+    font-size: 0;
+}
+html[lang=es] .swagger-ui .btn-group button.btn.btn-clear.opblock-control__btn::before {
+    content: "Borrar datos";
+    text-indent: 0 !important;
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+}

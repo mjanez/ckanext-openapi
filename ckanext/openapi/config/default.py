@@ -1,0 +1,3 @@
+# Default values
+default_openapi_endpoints = [{"url":"/static/openapi/sample.json","name":"sample","title":{"en":"Sample OpenAPI with examples","es":"Ejemplo de OpenAPI"},"description":{"en":"Description of the OpenAPI 1","es":"Descripcion del OpenAPI 1"}},{"url":"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/examples/v3.0/petstore.json","name":"datastore","title":{"en":"Petstore OpenAPI","es":"OpenAPI Petstore"},"description":{"en":"Petsore OpenAPI sample.","es":"Ejemplo de OpenAPI de Petstore."}}]
+validated_openapi_endpoints = []
