@@ -12,7 +12,8 @@ nav:
     - Translations: v1/dev-translations.md
     - Plugin docs with MKDocs: v1/dev-mkdocs.md
     - Update ChangeLog: v1/dev-changelog.md
-  - Configuration reference: 'v1/configuration.md'
+  - Configuration reference: v1/configuration.md
+  - Running the Tests: v1/tests.md
   - CHANGELOG: changelog.md
 
 theme:
