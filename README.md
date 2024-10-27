@@ -1,6 +1,6 @@
 # ckanext-openapi
 
-[![Tests](https://github.com/mjanez/ckanext-openapi/workflows/Tests/badge.svg?branch=main)](https://github.com/mjanez/ckanext-openapi/actions)
+[![Tests](https://github.com/mjanez/ckanext-openapi/actions/workflows/test.yml/badge.svg)](https://github.com/mjanez/ckanext-openapi/actions)
 [![codecov](https://codecov.io/github/mjanez/ckanext-openapi/graph/badge.svg?token=GPQ0578ZX2)](https://codecov.io/github/mjanez/ckanext-openapi)
 
 `ckanext-openapi` is an extension for CKAN that integrates and displays OpenAPI endpoints directly in the CKAN catalog.[^1] Supporting both **OpenAPI 2.0.0** and **OpenAPI 3.0.0** specifications.
@@ -25,10 +25,21 @@ In terms of CKAN features, this extension offers:
 * Integrates OpenAPI in CKAN Open Data portal.
 
 ## Running the Tests
-
-To run the tests do:
+To run the tests:
 
     pytest --ckan-ini=test.ini ckanext/openapi/tests
+
+
+### Run tests quickly with Docker Compose
+This repository includes a Docker Compose configuration to simplify running tests. The CKAN image is built using the Dockerfile located in the `docker/` directory.
+
+To test against the CKAN version you want to use, proceed as follows
+
+Building the images and run the tests:
+
+```sh
+docker compose up --build
+```
 
 ## Releases
 
