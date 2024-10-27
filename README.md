@@ -47,8 +47,9 @@ Compatibility with core CKAN versions:
 | CKAN version | Compatible?                                                                 |
 |--------------|-----------------------------------------------------------------------------|
 | 2.8          | ❌ No (>= Python 3)                                                          |
-| 2.9          | ✅ Yes  |
+| 2.9          | ❌ No [(>= CKAN 2.10)](https://github.com/mjanez/ckanext-openapi/actions/runs/11540091283)
 | 2.10         | ✅ Yes  |
+| 2.11         | ✅ Yes  |
 
 ### Plugins
 This plugin needs the following plugins to work properly:
