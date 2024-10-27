@@ -13,6 +13,12 @@ Compatibility with core CKAN versions:
 ### Plugins
 This plugin needs the following plugins to work properly:
 
+  ```sh
+  # Install latest stable release of:
+  ## ckan/ckanext-scheming: https://github.com/ckan/ckanext-scheming/tags (e.g. release-3.0.0)
+  pip install -e git+https://github.com/ckan/ckanext-scheming.git@release-3.0.0#egg=ckanext-scheming
+  ```
+
 ## Installation
 
 To install `ckanext-openapi`:
@@ -26,18 +32,25 @@ To install `ckanext-openapi`:
     git clone https://github.com/mjanez/ckanext-openapi.git
     cd ckanext-openapi
     pip install -e .
-	pip install -r requirements.txt
+    pip install -r requirements.txt
 
-3. Add `openapi` to the `ckan.plugins` setting in your CKAN
+3. Clone the source of `ckanext-scheming` to work properly:
+
+    git clone https://github.com/ckan/ckanext-scheming.git
+    cd ckanext-scheming
+    pip install -e .
+    pip install -r requirements.txt
+
+4. Add `openapi` to the `ckan.plugins` setting in your CKAN
    config file (by default the config file is located at
-   `/etc/ckan/default/ckan.ini`).
+   `/etc/ckan/default/ckan.ini`). And `scheming_datasets` if not using `schemingdcat` and `schemingdcat_datasets` from [`ckanext-schemingdcat`](https://github.com/mjanez/ckanext-schemingdcat?tab=readme-ov-file#configuration) extension.
 
     ```ini
     # Add the plugin to the list of plugins
-    ckan.plugins = ... dcat ... openapi
+    ckan.plugins = ... scheming_datasets ... openapi
     ```
 
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
+5. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
 
      sudo service apache2 reload
 
@@ -45,7 +58,11 @@ To install `ckanext-openapi`:
   ```sh
   cd $CKAN_VENV/src/
 
-  # Install the scheming_dataset plugin
+  # Install latest stable release of:
+  ## ckan/ckanext-scheming: https://github.com/ckan/ckanext-scheming/tags (e.g. release-3.0.0)
+  pip install -e git+https://github.com/ckan/ckanext-scheming.git@release-3.0.0#egg=ckanext-scheming
+
+  # Install the ckanext-openapi plugin
   pip install -e "git+https://github.com/ckan/ckanext-openapi.git#egg=ckanext-openapi"
   ```
 

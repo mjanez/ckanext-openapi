@@ -10,6 +10,10 @@ The `ckanext-openapi` is an extension for CKAN that allows OpenAPI endpoints to 
     
     It is **recommended to use with:** [`ckan-docker`](https://github.com/mjanez/ckan-docker) deployment and [`ckanext-schemingdcat`](https://github.com/mjanez/ckanext-schemingdcat)
 
+!!! warning
+
+    This project requires [ckan/ckanext-scheming](https://github.com/ckan/ckanext-scheming) to work properly.
+
 ![image](./v1/img/openapi_endpoints.png)
 
 Enhancements:

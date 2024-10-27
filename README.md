@@ -13,6 +13,8 @@
 > Read the documentation for a full user guide:
 > https://mjanez.github.io/ckanext-openapi
 
+> [!WARNING] 
+> This project requires [ckan/ckanext-scheming](https://github.com/ckan/ckanext-scheming) to work properly.
 
 ## Overview
 
@@ -47,6 +49,15 @@ Compatibility with core CKAN versions:
 | 2.8          | ❌ No (>= Python 3)                                                          |
 | 2.9          | ✅ Yes  |
 | 2.10         | ✅ Yes  |
+
+### Plugins
+This plugin needs the following plugins to work properly:
+
+  ```sh
+  # Install latest stable release of:
+  ## ckan/ckanext-scheming: https://github.com/ckan/ckanext-scheming/tags (e.g. release-3.0.0)
+  pip install -e git+https://github.com/ckan/ckanext-scheming.git@release-3.0.0#egg=ckanext-scheming
+  ```
 
 ## Copying and License
 
