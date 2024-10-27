@@ -1,15 +1,16 @@
 import pytest
+
 import ckan.plugins as p
 import ckanext.openapi.plugin as plugin
 import ckanext.openapi.config as oa_config
 from ckan.tests.helpers import reset_db
 
-@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.ckan_config("ckan.plugins", "openapi scheming_datasets")
 @pytest.mark.usefixtures("with_plugins")
 def test_plugin_loaded():
     assert p.plugin_loaded("openapi")
 
-@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.ckan_config("ckan.plugins", "openapi scheming_datasets")
 @pytest.mark.usefixtures("with_plugins")
 def test_update_config(monkeypatch):
     # Mock the openapi_validate_endpoints function
@@ -26,7 +27,7 @@ def test_update_config(monkeypatch):
     # Check if the validated_openapi_endpoints is set correctly
     assert oa_config.validated_openapi_endpoints == [{"url": "/static/openapi/sample.json", "name": "sample"}]
 
-@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.ckan_config("ckan.plugins", "openapi scheming_datasets")
 @pytest.mark.usefixtures("with_plugins")
 def test_get_blueprint():
     openapi_plugin = plugin.OpenapiPlugin()
@@ -36,7 +37,7 @@ def test_get_blueprint():
     assert len(blueprints) > 0
     assert blueprints[0].name == "openapi"
 
-@pytest.mark.ckan_config("ckan.plugins", "openapi")
+@pytest.mark.ckan_config("ckan.plugins", "openapi scheming_datasets")
 @pytest.mark.usefixtures("with_plugins")
 def test_get_helpers():
     openapi_plugin = plugin.OpenapiPlugin()

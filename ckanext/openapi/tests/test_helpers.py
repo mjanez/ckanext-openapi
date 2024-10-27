@@ -1,8 +1,19 @@
-# tests/test_helpers.py
 import pytest
 from ckan.plugins import toolkit
 import ckanext.openapi.helpers as helpers
 import ckanext.openapi.config as oa_config
+
+@pytest.mark.ckan_config("ckan.plugins", "openapi scheming_datasets")
+@pytest.mark.usefixtures("with_plugins")
+def test_helpers_registered():
+    # Retrieve registered helpers from the CKAN toolkit
+    registered_helpers = toolkit.h
+    
+    # Assert specific helpers are registered
+    assert "scheming_language_text" in registered_helpers, \
+        "Helper 'scheming_language_text' is not registered"
+    assert "openapi_get_endpoints" in registered_helpers, \
+        "Helper 'openapi_get_endpoints' is not registered"
 
 def test_openapi_get_endpoints_valid_list(monkeypatch):
     """Test that openapi_get_endpoints returns a valid List."""

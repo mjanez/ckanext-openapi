@@ -1,4 +1,9 @@
+import logging
+
 import ckanext.openapi.config as oa_config
+from ckan.plugins import toolkit
+
+log = logging.getLogger(__name__)
 
 def get_helpers():
     return {
@@ -6,9 +11,11 @@ def get_helpers():
     }
 
 def openapi_get_endpoints():
-    """Get the OpenAPI URL
+    """Get the OpenAPI endpoints list of dicts.
 
     Returns:
-        str: A URL if valid, otherwise None
+        list: A list of dictionaries representing the OpenAPI endpoints if valid, otherwise an empty list.
     """
-    return oa_config.validated_openapi_endpoints
+    if oa_config.validated_openapi_endpoints is not None:
+        return oa_config.validated_openapi_endpoints
+    return oa_config.default_openapi_endpoints

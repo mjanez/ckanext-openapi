@@ -24,8 +24,6 @@ def openapi_is_valid_endpoint(endpoint):
     """
     required_lang = p.toolkit.config.get("ckan.locale_default", "en")
     
-    
-    log.debug('required_lang: %s and validating endpoint: %s', required_lang, endpoint)
     if not isinstance(endpoint, dict):
         log.error('Not dict: %s', endpoint)
         return False
@@ -51,13 +49,14 @@ def construct_full_url(url, protocol, host, root_path=''):
     Returns:
         str: The full URL.
     """
-    if not url.startswith(('http://', 'https://')):
-        if root_path:
-            base_url = f"{protocol}://{host}/{root_path.strip('/')}"
-        else:
-            base_url = f"{protocol}://{host}"
-        url = urljoin(base_url, url.lstrip('/'))
-    return url
+    if url.startswith('http://') or url.startswith('https://'):
+        return url
+
+    base = f"{protocol}://{host}/"
+    if root_path:
+        base = urljoin(base, root_path.rstrip('/') + '/')
+    full_url = urljoin(base, url.lstrip('/'))
+    return full_url
 
 def openapi_validate_endpoints():
     """
@@ -67,9 +66,7 @@ def openapi_validate_endpoints():
     Returns:
         list: La lista validada de endpoints de OpenAPI o la lista por defecto si es inválida.
     """
-    log.debug('openapi_validate_endpoints called')
     endpoints = p.toolkit.config.get('ckanext.openapi.endpoints')
-    log.debug('Config value for openapi_endpoints: %s', endpoints)
     
     if endpoints is None:
         endpoints = oa_config.validated_openapi_endpoints or oa_config.default_openapi_endpoints
@@ -77,7 +74,6 @@ def openapi_validate_endpoints():
     if isinstance(endpoints, str):
         try:
             endpoints = json.loads(endpoints)
-            log.debug('Parsed endpoints: %s', endpoints)
         except (json.JSONDecodeError, TypeError) as e:
             log.error('Error parsing openapi_endpoints: %s', e)
             return oa_config.default_openapi_endpoints
@@ -88,7 +84,6 @@ def openapi_validate_endpoints():
 
     protocol, host = ckan_helpers.get_site_protocol_and_host()
     root_path = p.toolkit.config.get('ckan.root_path', '')
-    log.debug('Site protocol: %s, host: %s, root_path: %s', protocol, host, root_path)
 
     validated_endpoints = []
     for endpoint in endpoints:
@@ -97,7 +92,6 @@ def openapi_validate_endpoints():
             return oa_config.default_openapi_endpoints
         
         endpoint['url'] = construct_full_url(endpoint['url'], protocol, host, root_path)
-        log.debug('Constructed full URL for endpoint: %s', endpoint['url'])
         validated_endpoints.append(endpoint)
 
     return validated_endpoints
