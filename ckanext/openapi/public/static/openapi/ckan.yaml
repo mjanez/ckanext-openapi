@@ -3,9 +3,9 @@ servers:
 - url: https://demo.ckan.org/api
   description: Development Portal [PUBLIC]
 info:
-  title: Open Data Portal - Datastore API
+  title: Open Data Portal - CKAN API
   description: >
-    This API provides live access to the Datastore portion of the Demo Open Data Portal. Our staging portals are for sharing upcoming features and testing restricted network integration, and development sites are for features under development.
+    This API provides live access to the CKAN portion of the Demo Open Data Portal. Our staging portals are for sharing upcoming features and testing restricted network integration, and development sites are for features under development.
   termsOfService: https://creativecommons.org/licenses/by/4.0/
   contact:
     name: CKAN
