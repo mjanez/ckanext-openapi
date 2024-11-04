@@ -14,6 +14,7 @@
     This project requires [ckan/ckanext-scheming](https://github.com/ckan/ckanext-scheming) to work properly.
 
 ![image](./v1/img/openapi_endpoints.png)
+![image](./v1/img/swagger_doc.png)
 
 Enhancements:
 
