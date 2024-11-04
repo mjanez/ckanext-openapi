@@ -1,0 +1,99 @@
+openapi: 3.0.0
+servers:
+- url: https://demo.ckan.org/api
+  description: Development Portal [PUBLIC]
+info:
+  title: Open Data Portal - Datastore API
+  description: >
+    This API provides live access to the Datastore portion of the Demo Open Data Portal. Our staging portals are for sharing upcoming features and testing restricted network integration, and development sites are for features under development.
+  termsOfService: https://creativecommons.org/licenses/by/4.0/
+  contact:
+    name: CKAN
+    url: https://ckan.org/
+    email: info@ckan.org
+  license:
+    name: CC BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+  version: '0.1'
+security:
+  - default: []
+paths:
+  /action/package_list:
+    get:
+      summary: Return a list of the names of the site’s datasets (packages)
+      description: >
+        The package_list action returns a list of the names of the site’s datasets (packages).
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of datasets to return
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The offset to start returning packages from
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of dataset names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /action/current_package_list_with_resources:
+    get:
+      summary: Return a list of the site’s datasets (packages) and their resources
+      description: >
+        The current_package_list_with_resources action returns a list of the site’s datasets (packages) and their resources.
+        The list is sorted most-recently-modified first.
+      parameters:
+        - name: limit
+          in: query
+          description: The maximum number of datasets to return
+          required: false
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The offset to start returning packages from
+          required: false
+          schema:
+            type: integer
+        - name: page
+          in: query
+          description: Deprecated: use offset
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of datasets and their resources
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    resources:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          name:
+                            type: string
+                          format:
+                            type: string
+                          url:
+                            type: string
