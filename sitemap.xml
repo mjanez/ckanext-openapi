@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/changelog/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/tools/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/tools/output/configuration/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/configuration/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/dev-changelog/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/dev-mkdocs/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/dev-translations/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/getting-started/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://mjanez.github.io/ckanext-openapi/v1/tests/</loc>
-         <lastmod>2024-10-27</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
 </urlset>
