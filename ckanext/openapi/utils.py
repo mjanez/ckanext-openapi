@@ -12,6 +12,24 @@ log = logging.getLogger(__name__)
 
 OPENAPI_REQUIRED_KEYS = ['url', 'name', 'title', 'description']
 
+def get_not_lang_root_path():
+    """
+    Retrieve the root path from the CKAN configuration, removing the '{{LANG}}' placeholder if present.
+
+    This function fetches the 'ckan.root_path' configuration setting and removes the '/{{LANG}}' 
+    placeholder if it exists in the path.
+
+    Returns:
+        str: The root path with the '{{LANG}}' placeholder removed if it was present.
+    """
+    root_path = p.toolkit.config.get('ckan.root_path')
+    
+    # Removes the '{{LANG}}' part if present in the root_path
+    if root_path and '{{LANG}}' in root_path:
+        root_path = root_path.replace('/{{LANG}}', '')
+    
+    return root_path
+
 def openapi_is_valid_endpoint(endpoint):
     """
     Validates that an endpoint dictionary has the required keys and types.
@@ -83,7 +101,7 @@ def openapi_validate_endpoints():
         return oa_config.default_openapi_endpoints
 
     protocol, host = ckan_helpers.get_site_protocol_and_host()
-    root_path = p.toolkit.config.get('ckan.root_path', '')
+    root_path = get_not_lang_root_path()
 
     validated_endpoints = []
     for endpoint in endpoints:
