@@ -24,6 +24,9 @@ In terms of CKAN features, this extension offers:
 * Supports multi-language documentation fields.
 * Integrates OpenAPI in CKAN Open Data portal.
 
+![image](https://github.com/user-attachments/assets/641ed241-ae40-4ac6-8849-574bff213250)
+![image](https://github.com/user-attachments/assets/e9bfc506-05f3-48a7-b244-c9f8fe1660c5)
+
 ## Running the Tests
 To run the tests:
 
