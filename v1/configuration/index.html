@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../_assets/ckan.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -545,10 +545,11 @@
 <h4 id="ckanextopenapiendpoints">ckanext.openapi.endpoints<a class="headerlink" href="#ckanextopenapiendpoints" title="Permanent link">&para;</a></h4>
 <p>List of OpenAPI endpoints. Each endpoint should be a dictionary with the following keys:</p>
 <ul>
-<li><code>url</code>, str: URL or relative path of the OpenAPI file, accepted formats are JSON and YAML, e.g. <code>https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/examples/v3.0/petstore.json</code> or <code>/static/openapi/sample.yaml</code></li>
+<li><code>url</code>, str: URL or relative path of the OpenAPI file, accepted formats are JSON and YAML, e.g. <code>https://raw.githubusercontent.com/mjanez/ckanext-openapi/refs/heads/develop/ckanext/openapi/public/static/openapi/ckan.yaml</code> or <code>/static/openapi/sample.json</code></li>
 <li><code>name</code>, str: Path of the OpenAPI in CKAN Open Data portal, e.g. <code>ckan</code></li>
 <li><code>title</code>, dict: Title for the endpoint in different languages, e.g. <code>{'en': 'CKAN OpenAPI', 'es': 'Punto final OpenAPI de CKAN'}</code></li>
-<li><code>description</code>, dict: Description for the endpoint in different languages, e.g. <code>{'en': 'CKAN OpenAPI description', 'es': 'Descripción de OpenAPI CKAN'}</code></li>
+<li><code>description</code>, dict: Description for the endpoint in different languages, e.g. <code>{'en': 'CKAN OpenAPI description.', 'es': 'Descripción de OpenAPI CKAN.'}</code>
+JSON List example: <code>[{"url":"https://raw.githubusercontent.com/mjanez/ckanext-openapi/refs/heads/develop/ckanext/openapi/public/static/openapi/ckan.yaml","name":"ckan","title":{"en":"CKAN OpenAPI","es":"Punto final OpenAPI de CKAN"},"description":{"en":"CKAN OpenAPI description.","es":"Descripción de OpenAPI CKAN."}}]</code></li>
 </ul>
 <!-- end-config -->
 
