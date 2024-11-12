@@ -72,5 +72,11 @@ Set the endpoints you want to use with configuration options:
 
   ```ini
   # Each of the plugins is optional depending on your use
-  ckan.plugins = '[{"url":"/static/openapi/sample.json","name":"sample","title":{"en":"OpenAPI sample 1","es":"Ejemplo de OpenAPI 1"},"description":{"en":"API with examples.","es":"API con ejemplos."}},{"url":"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/examples/v3.0/petstore.json","name":"petstore","title":{"en":"Petstore OpenAPI example","es":"Ejemplo OpenAPI Petstore"},"description":{"en":"This is a sample Pet Store Server based on the OpenAPI 3.0 specification.","es":"Este es un ejemplo de Servidor de Tienda de Mascotas basado en la especificación OpenAPI 3.0."}}]'
+  ckanext.openapi.endpoints = '[{"url":"/static/openapi/sample.json","name":"sample","title":{"en":"OpenAPI sample 1","es":"Ejemplo de OpenAPI 1"},"description":{"en":"API with examples.","es":"API con ejemplos."}},{"url":"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/examples/v3.0/petstore.json","name":"petstore","title":{"en":"Petstore OpenAPI example","es":"Ejemplo OpenAPI Petstore"},"description":{"en":"This is a sample Pet Store Server based on the OpenAPI 3.0 specification.","es":"Este es un ejemplo de Servidor de Tienda de Mascotas basado en la especificación OpenAPI 3.0."}}]'
   ```
+
+Or using [`ckanext-ennvars`](https://github.com/ckan/ckanext-envvars):
+
+```bash
+CKANEXT__OPENAPI__ENDPOINTS='[{"url":"https://raw.githubusercontent.com/mjanez/ckanext-openapi/refs/heads/develop/ckanext/openapi/public/static/openapi/datastore.yaml","name":"datastore","title":{"en":"CKAN - Datastore API","es":"Portal de datos abiertos de CKAN - API Datastore"},"description":{"en":"This API provides live access to the Datastore portion of the CKAN Open Data Portal.","es":"Esta API proporciona acceso en tiempo real a la parte de Datastore del Portal de Datos Abiertos CKAN."}},{"url":"https://raw.githubusercontent.com/mjanez/ckanext-openapi/refs/heads/develop/ckanext/openapi/public/static/openapi/ckan.yaml","name":"ckan","title":{"en":"CKAN Open Data Portal - CKAN API (ES)","es":"Portal de datos abiertos de CKAN - API CKAN"},"description":{"en":"This API provides live access to the CKAN portion of the CKAN Open Data Portal.","es":"Esta API proporciona acceso en tiempo real a la parte de CKAN del Portal de Datos Abiertos CKAN."}}]'
+```
