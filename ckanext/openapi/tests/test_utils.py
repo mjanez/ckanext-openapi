@@ -4,7 +4,8 @@ from unittest.mock import patch
 from ckanext.openapi.utils import (
     openapi_is_valid_endpoint,
     construct_full_url,
-    openapi_validate_endpoints
+    openapi_validate_endpoints,
+    get_not_lang_root_path
 )
 
 @pytest.mark.ckan_config("ckan.locale_default", "en")
@@ -143,3 +144,20 @@ def test_openapi_validate_endpoints_invalid_structure(mock_get_site_protocol_and
     
     endpoints = openapi_validate_endpoints()
     assert endpoints == mock_oa_config.default_openapi_endpoints
+
+@patch('ckanext.openapi.utils.p.toolkit.config.get')
+def test_get_not_lang_root_path(mock_config_get):
+    # Test with root_path containing '{{LANG}}'
+    mock_config_get.return_value = '/ckan/{{LANG}}'
+    root_path = get_not_lang_root_path()
+    assert root_path == '/ckan'
+
+    # Test with root_path not containing '{{LANG}}'
+    mock_config_get.return_value = '/ckan'
+    root_path = get_not_lang_root_path()
+    assert root_path == '/ckan'
+
+    # Test with root_path being None
+    mock_config_get.return_value = None
+    root_path = get_not_lang_root_path()
+    assert root_path is None
