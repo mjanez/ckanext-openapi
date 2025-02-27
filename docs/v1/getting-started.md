@@ -64,7 +64,7 @@ To install `ckanext-openapi`:
   pip install -e git+https://github.com/ckan/ckanext-scheming.git@release-3.0.0#egg=ckanext-scheming
 
   # Install the ckanext-openapi plugin
-  pip install -e "git+https://github.com/ckan/ckanext-openapi.git#egg=ckanext-openapi"
+  pip install -e "git+https://github.com/mjanez/ckanext-openapi.git#egg=ckanext-openapi"
   ```
 
 ## Config settings
